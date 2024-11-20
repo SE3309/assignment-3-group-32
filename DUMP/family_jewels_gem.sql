@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: localhost    Database: family_jewls
+-- Host: localhost    Database: family_jewels
 -- ------------------------------------------------------
 -- Server version	8.0.37
 
@@ -29,8 +29,9 @@ CREATE TABLE `gem` (
   `carat` float NOT NULL,
   `shape` varchar(30) NOT NULL,
   `stock` int NOT NULL,
+  `price` float NOT NULL,
   PRIMARY KEY (`gemId`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +40,7 @@ CREATE TABLE `gem` (
 
 LOCK TABLES `gem` WRITE;
 /*!40000 ALTER TABLE `gem` DISABLE KEYS */;
-INSERT INTO `gem` VALUES (1,'Ruby','High',1.5,'Round',20),(2,'Sapphire','Medium',2,'Oval',15),(3,'Emerald','Premium',1.2,'Square',10),(4,'Diamond','Luxury',2.5,'Princess',8),(5,'Topaz','Standard',1.8,'Marquise',25),(6,'Amethyst','Medium',3,'Round',18),(7,'Citrine','Low',2.1,'Pear',30),(8,'Aquamarine','Premium',1.9,'Oval',12),(9,'Garnet','Standard',1.4,'Cushion',22),(10,'Opal','Medium',2.3,'Round',14),(11,'Peridot','High',1.7,'Oval',16),(12,'Spinel','Medium',2.4,'Round',9),(13,'Tanzanite','Luxury',1.6,'Pear',11),(14,'Tourmaline','Premium',2.2,'Square',13),(15,'Morganite','Standard',1.5,'Marquise',27),(16,'Zircon','Low',1.8,'Round',35),(17,'Alexandrite','Premium',1.3,'Oval',7),(18,'Carnelian','Standard',2,'Cushion',29),(19,'Chrysoberyl','High',1.9,'Round',10),(20,'Moonstone','Medium',2.1,'Pear',24),(21,'Kyanite','Low',1.6,'Oval',18),(22,'Bloodstone','Standard',1.4,'Round',22),(23,'Heliodor','Premium',2,'Square',14),(24,'Labradorite','Medium',1.9,'Cushion',19),(25,'Iolite','High',2.5,'Round',10),(26,'Turquoise','Low',1.8,'Marquise',26),(27,'Jasper','Standard',2.2,'Oval',20),(28,'Chrysoprase','Medium',2.4,'Pear',12),(29,'Malachite','Premium',1.6,'Round',15),(30,'Obsidian','Low',2.3,'Oval',28),(31,'Onyx','Standard',2.1,'Square',23),(32,'Fluorite','Medium',2,'Round',17),(33,'Beryl','Premium',1.7,'Cushion',9),(34,'Sunstone','Low',1.5,'Marquise',33),(35,'Prehnite','Standard',2.4,'Oval',21),(36,'Rhodonite','Medium',1.8,'Round',14),(37,'Amazonite','Premium',2.2,'Pear',8),(38,'Sugilite','Low',1.6,'Square',27),(39,'Ametrine','High',1.9,'Cushion',13),(40,'Andalusite','Standard',2,'Round',30),(41,'Spessartine','Medium',2.3,'Oval',16),(42,'Hessonite','Premium',2.1,'Pear',11),(43,'Danburite','Low',1.7,'Round',25),(44,'Kunzite','Standard',2.5,'Oval',9),(45,'Larimar','Medium',1.6,'Cushion',18),(46,'Petalite','Premium',1.4,'Square',6),(47,'Sphene','Low',1.3,'Marquise',31),(48,'Zoisite','High',2.4,'Oval',20),(49,'Scapolite','Standard',1.8,'Round',22);
+INSERT INTO `gem` VALUES (1,'Diamond','Excellent',1.2,'Round',50,5000),(2,'Diamond','Good',0.8,'Princess',30,3500),(3,'Ruby','Excellent',1.5,'Oval',40,4500),(4,'Ruby','Good',1,'Cushion',35,2500),(5,'Sapphire','Excellent',2,'Round',60,4000),(6,'Sapphire','Good',1.2,'Oval',45,2200),(7,'Emerald','Excellent',1.3,'Emerald',25,6000),(8,'Emerald','Good',1,'Round',30,3000),(9,'Amethyst','Excellent',2.5,'Cushion',100,500),(10,'Amethyst','Good',1.8,'Oval',150,350),(11,'Topaz','Excellent',1,'Oval',200,600),(12,'Topaz','Good',0.7,'Round',220,400),(13,'Aquamarine','Excellent',1.7,'Round',80,1200),(14,'Aquamarine','Good',1.2,'Emerald',70,900),(15,'Garnet','Excellent',1,'Heart',90,350),(16,'Garnet','Good',0.8,'Round',100,250),(17,'Opal','Excellent',1.5,'Oval',45,1800),(18,'Opal','Good',1,'Cushion',60,1200),(19,'Peridot','Excellent',1.2,'Round',50,700),(20,'Peridot','Good',1,'Oval',55,500),(21,'Tourmaline','Excellent',1.3,'Cushion',40,1500),(22,'Tourmaline','Good',1,'Round',45,1200),(23,'Citrine','Excellent',2,'Round',75,400),(24,'Citrine','Good',1.5,'Oval',85,300),(25,'Morganite','Excellent',1.4,'Oval',60,2200),(26,'Morganite','Good',1.1,'Round',50,1500),(27,'Tanzanite','Excellent',1.6,'Cushion',45,2500),(28,'Tanzanite','Good',1.2,'Round',60,1800),(29,'Spinel','Excellent',1.8,'Oval',40,1800),(30,'Spinel','Good',1,'Round',55,1200),(31,'Alexandrite','Excellent',1,'Emerald',20,8000),(32,'Alexandrite','Good',0.8,'Round',30,6500),(33,'Zircon','Excellent',1.2,'Cushion',70,700),(34,'Zircon','Good',1,'Oval',80,500),(35,'Moonstone','Excellent',1,'Oval',90,900),(36,'Moonstone','Good',0.7,'Round',100,600),(37,'Labradorite','Excellent',1.5,'Cushion',60,700),(38,'Labradorite','Good',1,'Oval',70,500),(39,'Iolite','Excellent',1.2,'Round',80,1000),(40,'Iolite','Good',0.9,'Cushion',90,750),(41,'Sunstone','Excellent',1.4,'Oval',40,1500),(42,'Sunstone','Good',1,'Round',50,1100),(43,'Kunzite','Excellent',1.5,'Emerald',25,2000),(44,'Kunzite','Good',1,'Cushion',30,1500),(45,'Chrysoprase','Excellent',1.3,'Round',60,500),(46,'Chrysoprase','Good',1,'Oval',75,400),(47,'Jade','Excellent',1.2,'Oval',80,2200),(48,'Jade','Good',1,'Cushion',90,1600);
 /*!40000 ALTER TABLE `gem` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-20 15:49:47
+-- Dump completed on 2024-11-20 17:11:51
