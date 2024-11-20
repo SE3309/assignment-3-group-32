@@ -2,8 +2,8 @@ CREATE TABLE User (
 	userId        	INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     userType		ENUM("Customer", "Admin") NOT NULL,
     username      	VARCHAR(30) NOT NULL,
-    firstName     	VARCHAR(30) NOT NULL,
-    lastName      	VARCHAR(30) NOT NULL,
+    firstName     	VARCHAR(30),
+    lastName      	VARCHAR(30),
     password      	VARCHAR(30) NOT NULL
 );
 
@@ -22,44 +22,27 @@ CREATE TABLE Admin (
     ON DELETE CASCADE
 );
 
+CREATE TABLE Link (
+	linkId			INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    name			VARCHAR(30) NOT NULL,
+    size			FLOAT NOT NULL,
+    volume			FLOAT NOT NULL
+);
+
 CREATE TABLE Necklace (
 	necklaceId		INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     linkId			INT NOT NULL,
-    name			VARCHAR(30),
-    linkAmount		INT,
+    name			VARCHAR(30) NOT NULL,
+    linkAmount		INT DEFAULT 20,
     size			FLOAT,
     totalVolume		FLOAT,
     FOREIGN KEY (linkId) REFERENCES Link(linkId)
 );
 
-CREATE TABLE Link (
-	linkId			INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    name			VARCHAR(30),
-    size			FLOAT,
-    volume			FLOAT
-);
-
 CREATE TABLE Ring (
 	ringId			INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    name			VARCHAR(30),
-    size			FLOAT
-);
-
-CREATE TABLE Product (
-	productId		INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    creatorId		INT NOT NULL,
-	ringId			INT,
-    necklaceId		INT,
-    gemId			INT,
-    metalId			INT NOT NULL,
-    type 			ENUM("Ring", "Necklace") NOT NULL,
     name			VARCHAR(30) NOT NULL,
-    mass			float,
-    FOREIGN KEY (creatorId) REFERENCES User(userId),
-    FOREIGN KEY (ringId) REFERENCES Ring(ringId),
-    FOREIGN KEY (necklaceId) REFERENCES Necklace(necklaceId),
-    FOREIGN KEY (gemId) REFERENCES Gem(gemId),
-    FOREIGN KEY (metalId) REFERENCES Metal(metalId)
+    size			FLOAT NOT NULL
 );
 
 CREATE TABLE Gem (
@@ -78,6 +61,29 @@ CREATE TABLE Metal (
     type			VARCHAR(30) NOT NULL,
     costPerKg		FLOAT NOT NULL,
     density			FLOAT NOT NULL
+);
+
+CREATE TABLE Product (
+	productId		INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    creatorId		INT NOT NULL,
+	ringId			INT,
+    necklaceId		INT,
+    gemId			INT,
+    metalId			INT NOT NULL,
+    type 			ENUM("Ring", "Necklace") NOT NULL,
+    name			VARCHAR(30) NOT NULL,
+    mass			float,
+    FOREIGN KEY (creatorId) REFERENCES User(userId),
+    FOREIGN KEY (ringId) REFERENCES Ring(ringId),
+    FOREIGN KEY (necklaceId) REFERENCES Necklace(necklaceId),
+    FOREIGN KEY (gemId) REFERENCES Gem(gemId),
+    FOREIGN KEY (metalId) REFERENCES Metal(metalId),
+    CHECK
+	(
+		(ringId IS NULL AND necklaceId IS NOT NULL)
+		OR
+		(ringId IS NOT NULL AND necklaceId IS NULL)
+	)
 );
 
 CREATE TABLE Customer_Order (
