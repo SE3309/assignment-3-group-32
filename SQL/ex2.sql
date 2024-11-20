@@ -51,7 +51,8 @@ CREATE TABLE Gem (
     quality			VARCHAR(30) NOT NULL,
     carat			FLOAT NOT NULL,
     shape			VARCHAR(30) NOT NULL,
-    stock			INT NOT NULL
+    stock			INT NOT NULL,
+    price 			FLOAT NOT NULL
 );
 
 CREATE TABLE Metal (
@@ -72,7 +73,8 @@ CREATE TABLE Product (
     metalId			INT NOT NULL,
     type 			ENUM("Ring", "Necklace") NOT NULL,
     name			VARCHAR(30) NOT NULL,
-    mass			float,
+    mass			FLOAT,
+    price			FLOAT,
     FOREIGN KEY (creatorId) REFERENCES User(userId),
     FOREIGN KEY (ringId) REFERENCES Ring(ringId),
     FOREIGN KEY (necklaceId) REFERENCES Necklace(necklaceId),
@@ -97,9 +99,10 @@ CREATE TABLE Customer_Order (
 );
  
 CREATE TABLE Product_Order (
-	productId		INT NOT NULL PRIMARY KEY,
+	productId		INT NOT NULL,
     orderId			INT NOT NULL,
     quantity		INT DEFAULT 1,
+    PRIMARY KEY(productId, orderId),
     FOREIGN KEY (productId) REFERENCES Product(productId),
     FOREIGN KEY (orderId) REFERENCES Customer_Order(orderId)
 );
