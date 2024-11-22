@@ -61,7 +61,7 @@ CREATE TABLE Metal (
     name			VARCHAR(30) NOT NULL,
     purity			VARCHAR(30) NOT NULL,
     type			VARCHAR(30) NOT NULL,
-    costPerKg		FLOAT NOT NULL,
+    costPerGram		FLOAT NOT NULL,
     density			FLOAT NOT NULL
 );
 
