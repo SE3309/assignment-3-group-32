@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: localhost    Database: se3309
+-- Host: localhost    Database: family_jewels
 -- ------------------------------------------------------
 -- Server version	8.0.40
 
@@ -27,10 +27,10 @@ CREATE TABLE `metal` (
   `name` varchar(30) NOT NULL,
   `purity` varchar(30) NOT NULL,
   `type` varchar(30) NOT NULL,
-  `costPerKg` float NOT NULL,
+  `costPerGram` float NOT NULL,
   `density` float NOT NULL,
   PRIMARY KEY (`metalId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `metal` (
 
 LOCK TABLES `metal` WRITE;
 /*!40000 ALTER TABLE `metal` DISABLE KEYS */;
+INSERT INTO `metal` VALUES (1,'Gold','99.9%','Precious',60,19.32),(2,'Gold','92.5%','Precious',55,18.45),(3,'Silver','99.9%','Precious',0.8,10.49),(4,'Silver','92.5%','Precious',0.75,10.3),(5,'Platinum','99.9%','Precious',70,21.45),(6,'Platinum','95.0%','Precious',68,20.8),(7,'Palladium','99.5%','Precious',65,12.02),(8,'Palladium','98.0%','Precious',63,11.8),(9,'Titanium','99.5%','Base',0.045,4.51),(10,'Titanium','96.0%','Base',0.043,4.3),(11,'Copper','99.9%','Base',0.009,8.96),(12,'Copper','97.0%','Base',0.0085,8.72),(13,'Bronze','90.0%','Alloy',0.0065,8.9),(14,'Bronze','88.0%','Alloy',0.006,8.8),(15,'Brass','90.0%','Alloy',0.0055,8.5),(16,'Brass','88.0%','Alloy',0.0052,8.4),(17,'Rhodium','99.9%','Precious',250,12.41),(18,'Rhodium','95.0%','Precious',240,12),(19,'Nickel','99.9%','Base',0.03,8.9),(20,'Nickel','95.0%','Base',0.028,8.65),(21,'Zinc','99.9%','Base',0.003,7.14),(22,'Zinc','97.0%','Base',0.0028,7),(23,'Iridium','99.9%','Precious',150,22.56),(24,'Iridium','95.0%','Precious',145,22),(25,'Osmium','99.9%','Precious',200,22.59),(26,'Osmium','95.0%','Precious',190,22.1),(27,'Tungsten','99.5%','Base',0.07,19.25),(28,'Tungsten','97.0%','Base',0.068,19);
 /*!40000 ALTER TABLE `metal` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-22 14:58:54
+-- Dump completed on 2024-11-22 15:01:03
