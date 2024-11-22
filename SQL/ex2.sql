@@ -92,7 +92,7 @@ CREATE TABLE Product (
 CREATE TABLE Customer_Order (
 	orderId			INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     customerId		INT NOT NULL,
-    status			ENUM("Received", "In Progress", "Shipping", "Complete"),
+    status			ENUM("Received", "In Progress", "Shipping", "Complete") DEFAULT "Received",
     startDate		DATE,
     totalPrice		DECIMAL(10, 2) NOT NULL,
     totalMass		FLOAT NOT NULL,

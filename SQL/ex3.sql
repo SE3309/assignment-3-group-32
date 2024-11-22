@@ -1,4 +1,4 @@
-INSERT INTO Product0 VALUES (
+INSERT INTO Product VALUES (
 	DEFAULT,
 	24,
 	4,
