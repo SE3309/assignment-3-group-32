@@ -42,7 +42,8 @@ CREATE TABLE Necklace (
 CREATE TABLE Ring (
 	ringId			INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     name			VARCHAR(30) NOT NULL,
-    size			FLOAT NOT NULL
+    size			FLOAT NOT NULL,
+    volume			FLOAT NOT NULL
 );
 
 CREATE TABLE Gem (
