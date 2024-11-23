@@ -73,7 +73,7 @@ CREATE TABLE Product (
     gemId			INT,
     metalId			INT NOT NULL,
     type 			ENUM("Ring", "Necklace") NOT NULL,
-    name			VARCHAR(30) NOT NULL,
+    name			VARCHAR(100) NOT NULL,
     mass			FLOAT,
     price			DECIMAL(10, 2),
     FOREIGN KEY (creatorId) REFERENCES User(userId),
