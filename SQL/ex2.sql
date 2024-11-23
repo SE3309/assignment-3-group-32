@@ -8,7 +8,7 @@ CREATE TABLE User (
 );
 
 CREATE TABLE Customer (
-	customerId		INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	customerId		INT NOT NULL PRIMARY KEY,
     address			VARCHAR(30) NOT NULL,
     emailAddress	VARCHAR(30) NOT NULL,
     phoneNumber		VARCHAR(10),
@@ -17,7 +17,7 @@ CREATE TABLE Customer (
 );
 
 CREATE TABLE Admin (
-	adminId        INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	adminId        INT NOT NULL PRIMARY KEY,
     FOREIGN KEY (adminId) REFERENCES User(userId)
     ON DELETE CASCADE
 );
