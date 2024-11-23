@@ -10,7 +10,7 @@ CREATE TABLE User (
 CREATE TABLE Customer (
 	customerId		INT NOT NULL PRIMARY KEY,
     address			VARCHAR(30) NOT NULL,
-    emailAddress	VARCHAR(30) NOT NULL,
+    emailAddress	VARCHAR(320) NOT NULL,
     phoneNumber		VARCHAR(10),
     FOREIGN KEY (customerId) REFERENCES User(userId)
     ON DELETE CASCADE
@@ -75,7 +75,7 @@ CREATE TABLE Product (
     type 			ENUM("Ring", "Necklace") NOT NULL,
     name			VARCHAR(30) NOT NULL,
     mass			FLOAT,
-    price			FLOAT,
+    price			DECIMAL(10, 2),
     FOREIGN KEY (creatorId) REFERENCES User(userId),
     FOREIGN KEY (ringId) REFERENCES Ring(ringId),
     FOREIGN KEY (necklaceId) REFERENCES Necklace(necklaceId),
