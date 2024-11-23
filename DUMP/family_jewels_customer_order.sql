@@ -27,12 +27,12 @@ CREATE TABLE `customer_order` (
   `customerId` int NOT NULL,
   `status` enum('Received','In Progress','Shipping','Complete') DEFAULT 'Received',
   `startDate` date DEFAULT NULL,
-  `totalPrice` decimal(10,2) NOT NULL,
-  `totalMass` float NOT NULL,
+  `totalPrice` decimal(10,2) DEFAULT NULL,
+  `totalMass` float DEFAULT NULL,
   PRIMARY KEY (`orderId`),
   KEY `customerId` (`customerId`),
   CONSTRAINT `customer_order_ibfk_1` FOREIGN KEY (`customerId`) REFERENCES `user` (`userId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `customer_order` (
 
 LOCK TABLES `customer_order` WRITE;
 /*!40000 ALTER TABLE `customer_order` DISABLE KEYS */;
+INSERT INTO `customer_order` VALUES (1,14,'Received','2024-11-23',2891.29,5439),(2,14,'In Progress','2024-11-14',2582885.00,13591.5),(3,14,'Complete','2024-11-01',2416.00,5333.58),(4,49,'Shipping','2024-11-06',975790.97,6165.6),(5,496,'In Progress','2024-11-16',600.08,2.89628),(6,516,'Complete','2024-10-16',2599.87,2120.75),(7,894,'Complete','2024-10-02',4943486.76,39900.3),(8,894,'Complete','2024-09-02',1214.94,3831.45),(9,894,'Complete','2024-09-14',20189.97,11615.7);
 /*!40000 ALTER TABLE `customer_order` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-22 19:12:58
+-- Dump completed on 2024-11-23  2:11:57
